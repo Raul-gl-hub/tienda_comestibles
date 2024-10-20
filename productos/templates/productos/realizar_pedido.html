@@ -1,0 +1,16 @@
+{% extends 'productos/base.html' %}
+
+{% block contenido %}
+  <div class="container mt-4">
+    <h2>Realizar Pedido</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="direccion_envio">Dirección de Envío:</label>
+        <input type="text" name="direccion_envio" id="direccion_envio" class="form-control" required>
+      </div>
+      <h4>Total: ${{ total }}</h4>
+      <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+    </form>
+  </div>
+{% endblock %}
